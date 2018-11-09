@@ -3,7 +3,7 @@ import matplotlib.image as mpimg
 import numpy as np
 import cv2
 
-img = mpimg.imread('img/gray.jpg')
+img = mpimg.imread('../images/gray.jpg')
 img1 = img[500:705, 75:300]
 img2 = img[500:705, 300:512]
 img3 = img[500:705, 512:720]
@@ -14,3 +14,12 @@ img7 = img[295:500, 512:709]
 img8 = img[295:495, 712:911]
 img9 = img[55:250, 575:775]
 img10 = img[60:255, 580:780]
+
+histogram = cv2.calcHist([img1], [0], None, [256], [0, 256]) 
+plt.xlim([0, 256]) 
+plt.plot(histogram) 
+
+plt.xlabel("Color value")
+plt.ylabel("Pixels")
+
+plt.show()
