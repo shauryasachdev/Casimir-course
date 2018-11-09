@@ -3,10 +3,11 @@ import matplotlib.image as mpimg
 import argparse
 import numpy as np
 import cv2
+
 # Manually splitting the image because finding each individual petri 
 #dish automatically is not possible or we could not. 
 
-img = mpimg.imread('img/results_L3.jpg')
+img = mpimg.imread('img/gray.jpg')
 img1 = img[500:705, 75:300]
 img2 = img[500:705, 300:512]
 img3 = img[500:705, 512:720]
